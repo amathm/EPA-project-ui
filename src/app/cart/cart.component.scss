@@ -1,0 +1,27 @@
+.cart {
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+  .cart__total {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .cart__pay-button {
+    // background: blue;
+    position: absolute;
+    right: 0;
+  }
+
+  .card__name {
+    color: darkorange;
+  }
+
+  .cart__submission {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

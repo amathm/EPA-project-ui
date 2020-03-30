@@ -1,0 +1,31 @@
+.banner {
+  margin:0;
+  padding:0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: #333 url('https://images.unsplash.com/photo-1502301103665-0b95cc738daf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80') no-repeat;
+  background-size: cover;
+  height: 100vh;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+
+  .columns {
+    display: block;
+    width:100%;
+    background: rgba(184, 137, 66, 0.295);
+
+    &.centerpiece {
+      padding: 10px;
+    }
+  }
+
+  .banner__buttons_inner {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 50px 0;
+    background: #333;
+  }
+}

@@ -1,0 +1,13 @@
+.register {
+  // background: grey;
+  max-width: 600px;
+  margin: 0 auto;
+
+  .register__form {
+    width: 100%;
+
+    mat-form-field {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,73 @@
+<div class="register">
+  <h4 class="register__title">Register Details</h4>
+  <form [formGroup]="registerForm"
+    (ngSubmit)="send()"
+    class="register__form">
+    <mat-form-field>
+      <mat-label>name</mat-label>
+      <input matInput type="text" formControlName="name" required>
+      <mat-hint *ngIf="name.untouched">name hint</mat-hint>
+      <mat-error>name invalid</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input matInput type="password" formControlName="password" required>
+      <mat-hint *ngIf="password.untouched">password hint</mat-hint>
+      <mat-error>Password invalid</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <mat-label>email</mat-label>
+      <input matInput type="email" formControlName="email" required>
+      <mat-hint *ngIf="email.untouched">email hint</mat-hint>
+      <mat-error>email invalid</mat-error>
+    </mat-form-field><br>
+
+    <h4>Bank Card</h4>
+
+    <section
+  class="bank-card">
+  <mat-form-field>
+    <mat-label>Top Up</mat-label>
+    <input matInput type="number"
+      formControlName="balance"
+      required>
+    <!-- <mat-hint *ngIf="balance.untouched">Balance hint</mat-hint> -->
+    <mat-error>Balance Invalid</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Address</mat-label>
+    <input matInput type="text"
+      formControlName="address"
+      required>
+    <!-- <mat-hint *ngIf="address.untouched">Address hint</mat-hint> -->
+    <mat-error>Address Invalid</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Description</mat-label>
+    <input matInput type="text"
+      formControlName="description"
+      required>
+    <!-- <mat-hint *ngIf="description.untouched">Description hint</mat-hint> -->
+    <mat-error>Description Invalid</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Currency</mat-label>
+    <select matNativeControl formControlName="currency">
+      <option value="undefined" [ngValue]="null" disabled>Select Your Currency</option>
+      <option value="gbp" >GBP</option>
+    </select>
+    <!-- <mat-hint *ngIf="currency.untouched">Currency hint</mat-hint> -->
+    <mat-error>Currency Invalid</mat-error>
+  </mat-form-field>
+</section>
+
+    <button mat-raised-button type="submit"
+      [disabled]="registerForm.invalid" (emitForm)="send($event)"
+      (click)="submitForm(registerForm.value)">Register</button>
+      <button mat-raised-button (click)="reset()">Reset</button>
+  </form>
+</div>
+<br>
+

@@ -1,0 +1,8 @@
+<button [routerLink]="['/login']">Login</button>
+<button [routerLink]="['/register']">Register</button>
+<div *ngIf="loggedInStatus()">
+  <button (click)="logOut()">Logout</button><br><br>
+<section>
+  <div>Balance: <span>{{ getBalance() | currency:'GBP' }}</span></div>
+</section>
+</div>

@@ -1,0 +1,32 @@
+<div class="login">
+  <form [formGroup]="loginForm"
+    (ngSubmit)="send()"
+    class="login__form">
+    <mat-form-field>
+      <mat-label>name</mat-label>
+      <input matInput type="text" formControlName="name" required>
+      <mat-hint *ngIf="name.untouched">name hint</mat-hint>
+      <mat-error>name invalid</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input matInput type="password" formControlName="password" required>
+      <mat-hint *ngIf="password.untouched">password hint</mat-hint>
+      <mat-error>Password invalid</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <mat-label>email</mat-label>
+      <input matInput type="email" formControlName="email" required>
+      <mat-hint *ngIf="email.untouched">email hint</mat-hint>
+      <mat-error>email invalid</mat-error>
+    </mat-form-field>
+    <button mat-raised-button type="submit"
+      [disabled]="loginForm.invalid"
+      (click)="submitForm(loginForm.value)">Login</button>
+      <button mat-raised-button (click)="reset()">Reset</button>
+  </form>
+</div>
+<br>
+

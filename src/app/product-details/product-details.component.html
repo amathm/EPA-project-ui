@@ -1,0 +1,29 @@
+<app-top-bar *ngIf="product"
+  [type]="product.type">
+</app-top-bar>
+<article class="product">
+  <div class="product_image">
+    <img [src]="product.imagePath">
+  </div>
+  <button mat-raised-button (click)="addToCart(product)">Add To Cart</button>
+  <div class="product__info">
+    <div>
+      <section>
+        <h3 class="product__name">{{ product.name }}</h3>
+        <p>{{ formatPrice(product.price) | currency:"GBP" }}</p>
+        <p>Type: {{ returnProductType(product.type) }}</p>
+      </section>
+      <section>
+        <div>
+          <p>{{ product.description }}</p>
+        </div>
+      </section>
+    </div>
+    <div>
+      <h4>Ingredients: </h4>
+      <ul *ngFor="let ingredient of product.ingredients">
+        <li>{{ingredient}}</li>
+      </ul>
+    </div>
+  </div>
+</article>

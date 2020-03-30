@@ -1,0 +1,22 @@
+<app-top-bar></app-top-bar>
+<div class="cart">
+  <h3 class="cart__title">Shopping Cart</h3>
+  <section class="cart"
+    *ngFor="let item of items; index as id">
+    <div class="cart__details">
+      <p class="card__name">{{ item.name }}</p>
+      <p>{{ item.priceFormat | currency:"GBP" }}</p>
+      <input type="number" value="1" [(ngModel)]="item.quantity">
+    </div>
+    <hr>
+  </section>
+  <section class="cart__total">
+    <h3>Total: </h3>
+    <span>{{ getItemsTotal() }}</span>
+  </section>
+  <section class="cart__submission">
+    <button mat-raised-button (click)="cancelOrder()">Cancel</button>
+    <button class="cart__pay-button" mat-raised-button (click)="pay(total)">Pay</button>
+    <button>test</button>
+  </section>
+</div>

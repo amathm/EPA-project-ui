@@ -1,0 +1,16 @@
+.login-standalone {
+  // background: grey;
+  display: flex;
+  justify-content: center;
+  // border: 1px solid blue;
+  max-width: 600px;
+  margin: 0 auto;
+
+  form {
+    width: 100%;
+
+    mat-form-field {
+      width: 100%;
+    }
+  }
+}

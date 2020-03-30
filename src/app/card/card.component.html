@@ -1,0 +1,12 @@
+<section class="card">
+  <a class="card_image-link" [routerLink]="['/products', productId]">
+    <span>{{ product.name }}</span>
+    <img src="{{ product.imagePath }}">
+  </a>
+  <div class="card__meta">
+    <span>Price: {{ price | currency:"GBP"}}</span>
+    <button mat-raised-button
+      (click)="addToCart(product)">Add to Cart</button>
+  </div>
+</section>
+<!-- <hr> -->

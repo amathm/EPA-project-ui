@@ -1,0 +1,22 @@
+<header class="top-bar">
+  <div class="top-bar__left">
+    <section *ngIf="eatType" class="top-bar__order">
+      {{  'Order: '+ eatType }}
+    </section>
+    <a routerLink="/products">
+      <h2>Products</h2>
+    </a>
+  </div>
+  <div class="top-bar__right">
+    <!-- <section class="top-bar__type" *ngIf="type">
+      <span *ngIf="type.food; else beverage">Type: Dish</span>
+      <ng-template #beverage>Type: Beverage</ng-template>
+    </section> -->
+    <section>
+      <a mat-button routerLink="/cart">
+        <mat-icon>add_shopping_cart</mat-icon>
+        Checkout
+      </a>
+    </section>
+  </div>
+</header>

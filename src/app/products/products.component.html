@@ -1,0 +1,16 @@
+<section class="products">
+  <app-top-bar
+    [eatType]="eatType"></app-top-bar>
+  <app-dashboard></app-dashboard>
+  <main class="products__main" *ngIf="products">
+    <app-card
+      *ngFor="let product of products; index as productId"
+      [product]="product"
+      [price]="product.price"
+      [productId]="productId">
+    </app-card>
+  </main>
+  <footer class="products__footer">
+    <p>&#169; Deveopyed by Amath M'baye 2020.</p>
+  </footer>
+</section>
